@@ -76,9 +76,12 @@ input[type=sumbit]:hover {
 	border-radius: 0px 0px 0px 0px;
 }
 
-/* Clear floats (clearfix hack) */
 .btn-group:after {
 	content: "";
 	clear: both;
 	display: table;
+}
+
+.innerFormButton {
+	width: max-content; float:left;
 }

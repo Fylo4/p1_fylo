@@ -4,15 +4,15 @@
 	<link rel="stylesheet" href="Style.css">
 </head>
 <body>
-	<p><a href="index.html">Login (Index)</a> | <a href="create.html">Create</a> | <a href="error.html">Error</a> | <a href="game.html">Game</a> | <a href="history.html">Battle History</a> | <a href="shop.html">Shop</a></p>
-	
 	<h1 style="text-align: center">Vanquish Legends</h1>
 	<div id="centerBox">
 		<h2>Create Account</h2>
-		<p>Username:  <input/></p>
-		<p>Password:  <input/></p>
-		<p>Confirm Password:  <input/></p>
-		<button>Create</button>
+		<form action="create" method="post">
+			<p>Username:  <input type="text" name="username"></p>
+			<p>Password:  <input type="password" name="pass1"></p>
+			<p>Confirm Password:  <input type="password" name="pass2"></p>
+			<button type="submit">Create</button>
+		</form>
 		<br><br>
 		<a href="index.html">Log in</a>
 	</div>

@@ -10,25 +10,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet{
+@WebServlet("/create")
+public class CreateServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
 		
-		//Replace with verifying the username
-		if(username.equals("user")) {
-			System.out.println("Successful login");
-			RequestDispatcher rd = request.getRequestDispatcher("game");
+		String username = request.getParameter("username");
+		String pass1 = request.getParameter("pass1");
+		String pass2 = request.getParameter("pass2");
+		
+		//Also make sure username is unique
+		if(pass1.equals(pass2)) {
+			//Insert into users username and password
+			//Create a corresponding game character
+			RequestDispatcher rd = request.getRequestDispatcher("/login");
 			rd.forward(request, response);
-		} else {
-			System.out.println("Failed login");
-			//out.println("Username or password is incorrect");
-			RequestDispatcher rd = request.getRequestDispatcher("index.html");
-			rd.include(request, response);
+		}
+		else {
+			//Create failed, reload the page
+			RequestDispatcher rd = request.getRequestDispatcher("/create.html");
+			rd.forward(request, response);
 		}
 	}
 }
