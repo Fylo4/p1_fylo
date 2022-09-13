@@ -43,6 +43,19 @@ button:hover {
 	/*background-color: #3e8e41;*/
 	background-color: #283618;
 }
+input[type=sumbit]{
+	/*background-color: #04AA6D;*/
+	background-color: #606C38;
+	border: 1px solid black;
+	color: white;
+	cursor: pointer;
+	padding: 10px 24px;
+	border-radius: 10px;
+}
+input[type=sumbit]:hover {
+	/*background-color: #3e8e41;*/
+	background-color: #283618;
+}
 
 
 
